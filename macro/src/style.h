@@ -4,6 +4,7 @@
 #include <TGraphErrors.h>
 #include <TCanvas.h>
 #include <TLegend.h>
+#include <TLine.h>
 #include <TStyle.h>
 
 void SetHistoStyle(TH1 *h, Int_t mcolor, Int_t mstyle, Float_t msize, Float_t Tsizex, Float_t Tsizey, Float_t Lsizex, Float_t Lsizey, Float_t Offsetx, Float_t Offsety)
@@ -38,12 +39,12 @@ void SetgrStyle(TGraph *h, Int_t mcolor, Int_t mstyle, Float_t msize, Float_t Ts
 
 void SetHistoQA(TH1 *h)
 {
+    h->SetTitle(0);
     h->SetMarkerStyle(8);
     h->SetMarkerSize(1);
     h->SetMarkerColor(1);
     h->SetLineColor(1);
     h->SetLineWidth(2);
-    h->SetTitle(0);
     // h->GetXaxis()->SetNdivisions(506);
     // h->GetYaxis()->SetNdivisions(505);
     h->GetXaxis()->SetLabelOffset(0.015);
@@ -56,7 +57,7 @@ void SetHistoQA(TH1 *h)
     h->GetXaxis()->CenterTitle(true);
     h->GetYaxis()->CenterTitle(true);
     h->GetYaxis()->SetTitleOffset(1.4);
-    h->GetYaxis()->SetDecimals(false);
+    // h->GetYaxis()->SetDecimals(false);
     h->GetYaxis()->SetLabelOffset(0.015);
     h->GetYaxis()->SetLabelFont(42);
     h->GetYaxis()->SetLabelSize(0.045);
@@ -107,7 +108,7 @@ void SetHistoQA2D(TH2 *h)
     h->GetZaxis()->SetMaxDigits(3);
 }
 
-void SetGrapherrorStyle(TGraphErrors *gr)
+void SetGraphErrorStyle(TGraphErrors *gr)
 {
     gr->SetTitle(0);
     gr->SetMarkerStyle(20);
@@ -204,6 +205,7 @@ void SetLegendStyle(TLegend *l)
     l->SetBorderSize(0);
     l->SetTextFont(42);
     l->SetFillStyle(0);
+    l->SetTextSize(0.04);
 }
 
 void SetLineStyle(TLine *line, int linecolor)
